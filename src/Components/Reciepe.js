@@ -4,14 +4,14 @@ import { ReciepeContext } from './App'
 
 export default function Reciepe(props) {
 
-    const {handleRecipeDelete}=useContext(ReciepeContext);
+    const {handleRecipeDelete,handleReciepeSelect}=useContext(ReciepeContext);
 
 
     return (
         <div className="reciepe">
             <div className="reciepe-header">
             <h3 className="reciepe-title">{props.name}</h3>
-                <button className="btn">Edit</button>
+                <button className="btn" onClick={()=>{handleReciepeSelect(props.id)}}>Edit</button>
                 <button className="btn" onClick={()=>{handleRecipeDelete(props.id)}}>Delete</button>
             </div>
             <div>

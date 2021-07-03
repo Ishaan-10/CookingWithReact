@@ -6,7 +6,7 @@
     top: 0;
     width: 50%;
     max-height: 100%;
-    overflow-y: auto;
+    overflow-y: none;
 }
 .remove-button-container{
     text-align: right;
