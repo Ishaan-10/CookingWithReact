@@ -25,13 +25,3 @@
     padding-top: 30px;
     padding-bottom: 30px;
 }
-.reciepe_edit{
-    padding: 30px;
-    padding-top: 10px;
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 50%;
-    max-height: 100%;
-    overflow-y: auto;
-}

@@ -1,0 +1,40 @@
+.reciepe_edit{
+    padding: 30px;
+    padding-top: 10px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 50%;
+    max-height: 100%;
+    overflow-y: auto;
+}
+.remove-button-container{
+    text-align: right;
+}
+.reciepe_edit-grid{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    row-gap: 10px;
+    column-gap: 40px;
+
+}
+.reciepe_edit-edit{
+    border: 1px solid black;
+    border-radius: 5px;
+    outline: none;
+    
+}
+.reciepe_edit-label{
+    font-weight: bold;
+
+}
+textarea{
+    resize: none;
+}
+.reciepe-edit-ingredients{
+    margin-top: 20px;
+    margin-left: 20px;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    gap:10px
+}
