@@ -26,18 +26,20 @@ function App() {
   const handleAddReciepe = () => {
     const newRecipe = {
       id: uuidv4(),
-      name: 'New',
+      name: 'New Reciepe',
       servings: 1,
-      cookTime: "1:00",
-      instructions: "1.Put salt in chicken 2.Put salt in chicken 3.Put salt in chicken",
+      cookTime: "",
+      instructions: "",
       ingredients: [{
         id: uuidv4(),
-        name: "Chicken",
-        amount: "2 pounds"
+        name: "",
+        amount: ""
       }]
     }
     setRecipes([...recipes, newRecipe]);
+    setSelectedReceipeId(newRecipe.id);
   }
+
 
   const handleRecipeDelete = (id) => {
     const newlist = recipes.filter(recipe => recipe.id !== id)
@@ -58,8 +60,8 @@ function App() {
     handleRecipeDelete,
     handleReciepeSelect,
     selectedReceipe,
-    handleReciepeChange
-  }
+    handleReciepeChange,
+}
 
   return (
     <div>

@@ -5,8 +5,7 @@
     right: 0;
     top: 0;
     width: 50%;
-    max-height: 100%;
-    overflow-y: none;
+    min-height: 100%;
 }
 .remove-button-container{
     text-align: right;
@@ -26,10 +25,10 @@
 }
 .reciepe_edit-label{
     font-weight: bold;
-
 }
 textarea{
     resize: none;
+    white-space: pre-wrap;
 }
 .reciepe-edit-ingredients{
     margin-top: 20px;

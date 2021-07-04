@@ -1,18 +1,38 @@
 import React,{useContext} from 'react'
 import ReciepeIngredients from './ReciepeIngredients';
 import { ReciepeContext } from './App';
+import { v4 as uuidv4 } from 'uuid';
+
 
 
 export default function ReciepeEdit() {
     const {
         selectedReceipe,
         handleReciepeChange,
-        handleReciepeSelect
+        handleReciepeSelect,
     } = useContext(ReciepeContext);
-    console.log(selectedReceipe)
 
     const handleChange = (changes)=>{
         handleReciepeChange(selectedReceipe.id,{...selectedReceipe,...changes})
+    }
+    const handleIngredientChange = (id,ingredient)=>{
+        const newIngredients =[...selectedReceipe.ingredients]
+        const index = newIngredients.findIndex(r=>r.id===id)
+        newIngredients[index]= ingredient
+        handleChange({ingredients:newIngredients})
+    }
+    const handleIngredientAdd = ()=>{
+        const newIngredient={
+          id: uuidv4(),
+          name: "",
+          amount:"",
+        }
+        handleChange({ingredients:[...selectedReceipe.ingredients,newIngredient]});
+      }
+    const handleIngredientDelete = (ingredientId)=>{
+        const filteredIngredients = selectedReceipe.ingredients.filter(i=> i.id !== ingredientId);
+        console.log(filteredIngredients);
+        handleChange({ingredients:filteredIngredients});
     }
     return (
         <div className="reciepe_edit">
@@ -51,10 +71,14 @@ export default function ReciepeEdit() {
                 <div></div>
             </div>
             {selectedReceipe.ingredients.map(ingredient=>{
-                return <ReciepeIngredients key={ingredient.id} ingredient={ingredient} />
+                return <ReciepeIngredients
+                key={ingredient.id} 
+                ingredient={ingredient}
+                handleIngredientChange={handleIngredientChange}
+                handleIngredientDelete={handleIngredientDelete} />
             })}
 
-            <button className="btn" onClick={()=>{}}>Add Ingredient</button>
+            <button className="btn" onClick={()=>handleIngredientAdd()}>Add Ingredient</button>
 
         </div>
     )

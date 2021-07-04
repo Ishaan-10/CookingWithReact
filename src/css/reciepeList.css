@@ -25,3 +25,18 @@
     padding-top: 30px;
     padding-bottom: 30px;
 }
+.reciepe >div{
+    margin-bottom:4px;
+}
+.reciepe-heading{
+    font-weight: bold;
+    font-size: 20px;
+}
+.reciepe-value{
+    color: rgba(104, 79, 79, 0.685);
+    font-size: 18px;
+}
+.reciepe-title{
+    margin: 10px 0px;
+    padding: 0px;
+}
